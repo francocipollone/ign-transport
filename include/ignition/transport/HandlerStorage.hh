@@ -240,6 +240,8 @@ namespace ignition
       public: bool RemoveHandlersForNode(const std::string &_topic,
                                          const std::string &_nUuid)
       {
+        std::cout << "{IgnTransport} data size: "<< data.size() << std::endl;
+        std::cout << "{IgnTransport} Erase handlers in topic: "<<_topic<< " for node: "<< _nUuid << std::endl;
         size_t counter = 0;
         if (this->data.find(_topic) != this->data.end())
         {
@@ -247,7 +249,7 @@ namespace ignition
           if (this->data[_topic].empty())
             this->data.erase(_topic);
         }
-
+        std::cout << "{IgnTransport} data size: "<< data.size() << std::endl;
         return counter > 0;
       }
 

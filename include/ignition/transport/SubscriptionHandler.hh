@@ -192,6 +192,7 @@ namespace ignition
       /// \param[in] _cb The callback with the following parameters:
       public: void SetCallback(const MsgCallback<T> &_cb)
       {
+        std::cout << "{SubscriptionHandler}SetCallback method" << std::endl;
         this->cb = _cb;
       }
 
@@ -199,6 +200,7 @@ namespace ignition
       public: bool RunLocalCallback(const ProtoMsg &_msg,
                                     const MessageInfo &_info)
       {
+        std::cout << "{SubscriptionHandler}RunLocalCallback method" << std::endl;
         // No callback stored.
         if (!this->cb)
         {

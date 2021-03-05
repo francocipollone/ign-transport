@@ -125,6 +125,7 @@ namespace ignition
       public: void SetCallback(
         const std::function<bool(const Req &, Rep &)> &_cb)
       {
+        std::cout << "{IgnTransport} SetCallback" << std::endl;
         this->cb = _cb;
       }
 
@@ -133,6 +134,7 @@ namespace ignition
                                     transport::ProtoMsg &_msgRep)
       {
         // Execute the callback (if existing)
+        std::cout << "{IgnTransport} RunLocalCallback" << std::endl;
         if (!this->cb)
         {
           std::cerr << "RepHandler::RunLocalCallback() error: "
@@ -157,6 +159,7 @@ namespace ignition
                                std::string &_rep)
       {
         // Check if we have a callback registered.
+        std::cout << "{IgnTransport} RunCallback" << std::endl;
         if (!this->cb)
         {
           std::cerr << "RepHandler::RunCallback() error: "

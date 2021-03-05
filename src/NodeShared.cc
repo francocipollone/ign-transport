@@ -1458,6 +1458,8 @@ void NodeSharedPrivate::PublishThread()
     {
       try
       {
+        std::cout << "{NodeSharedPrivate::PublishThread} handler.use_count: "<< handler.use_count() << std::endl;
+        std::cout << "{NodeSharedPrivate::PublishThread} Call RunLocalCallback" << std::endl;
         handler->RunLocalCallback(*(msgDetails->msgCopy.get()),
             msgDetails->info);
       }

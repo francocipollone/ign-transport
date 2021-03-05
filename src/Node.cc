@@ -552,6 +552,7 @@ std::vector<std::string> Node::SubscribedTopics() const
 //////////////////////////////////////////////////
 bool Node::Unsubscribe(const std::string &_topic)
 {
+  std::cout << "{IgnTransport} Node Unsubscribe" << std::endl;
   // Topic remapping.
   std::string topic = _topic;
   this->Options().TopicRemap(_topic, topic);
