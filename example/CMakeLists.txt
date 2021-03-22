@@ -62,6 +62,21 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/subscriber.cc")
   target_link_libraries(subscriber ignition-transport${IGN_TRANSPORT_VER}::core)
 endif()
 
+if (EXISTS "${CMAKE_SOURCE_DIR}/publisher_bug_example.cc")
+  add_executable(publisher_bug_example publisher_bug_example.cc)
+  target_link_libraries(publisher_bug_example ignition-transport${IGN_TRANSPORT_VER}::core)
+endif()
+
+if (EXISTS "${CMAKE_SOURCE_DIR}/subscriber_bug_example.cc")
+  add_executable(subscriber_bug_example subscriber_bug_example.cc)
+  target_link_libraries(subscriber_bug_example ignition-transport${IGN_TRANSPORT_VER}::core)
+endif()
+
+if (EXISTS "${CMAKE_SOURCE_DIR}/subscriber_bug_workaround_example.cc")
+  add_executable(subscriber_bug_workaround_example subscriber_bug_workaround_example.cc)
+  target_link_libraries(subscriber_bug_workaround_example ignition-transport${IGN_TRANSPORT_VER}::core)
+endif()
+
 if (EXISTS "${CMAKE_SOURCE_DIR}/subscriber_generic.cc")
   add_executable(subscriber_generic subscriber_generic.cc)
   target_link_libraries(subscriber_generic
